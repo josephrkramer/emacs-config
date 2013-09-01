@@ -14,6 +14,10 @@
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))
 
+;; color-theme-solarized
+(unless (package-installed-p 'color-theme-solarized)
+  (package-refresh-contents) (package-install 'color-theme-solarized))
+
 ;; pretty print xml
 (defun bf-pretty-print-xml-region (begin end)
   "Pretty format XML markup in region. You need to have nxml-mode
