@@ -4,19 +4,50 @@
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-;; load git-commit
-;(require 'git-commit) 
+;; load git-commit (auto)
 (unless (package-installed-p 'git-commit-mode)
   (package-refresh-contents) (package-install 'git-commit-mode))
+(require 'git-commit) 
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 
-;; scala-mode2
+;;org mode (auto)
+(unless (package-installed-p 'org)
+  (package-refresh-contents) (package-install 'org))
+(require 'org)
+;start git rebase in org-mode
+(setq auto-mode-alist (cons '("git-rebase-todo" . org-mode) auto-mode-alist))
+
+;; scala-mode2 (auto)
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))
+(require 'scala-mode2)
 
-;; color-theme-solarized
+;; color-theme-solarized (auto)
 (unless (package-installed-p 'color-theme-solarized)
   (package-refresh-contents) (package-install 'color-theme-solarized))
+(load-theme 'solarized-dark t)
+
+;;ensime (auto)
+(unless (package-installed-p 'ensime)
+  (package-refresh-contents) (package-install 'ensime))
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+;;magit (auto)
+(unless (package-installed-p 'magit)
+  (package-refresh-contents) (package-install 'magit))
+(require 'magit)
+
+;;helm (auto)
+(unless (package-installed-p 'helm)
+  (package-refresh-contents) (package-install 'helm))
+(require 'helm-config)
+(global-set-key (kbd "C-c h") 'helm-mini)
+(global-set-key (kbd "C-x C-l") 'helm-locate)
+(helm-mode 1)
+
+;;Java Development
+(semantic-mode 1)
 
 ;; pretty print xml
 (defun bf-pretty-print-xml-region (begin end)
@@ -46,6 +77,9 @@ by using nxml's indentation rules."
 
 (setq frame-title-format "%b - emacs")
 
+;setting slightly small text size
+(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+
 ;disable backup
 (setq backup-inhibited t)
 ;disable auto save
@@ -69,7 +103,4 @@ by using nxml's indentation rules."
 (global-linum-mode t)
 
 ;set scroll bar to the right
-;(set-scroll-bar-mode 'right)
-
-;start git rebase in org-mode
-(setq auto-mode-alist (cons '("git-rebase-todo" . org-mode) auto-mode-alist))
+(set-scroll-bar-mode 'right)
