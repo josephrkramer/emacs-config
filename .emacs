@@ -7,7 +7,7 @@
 ;; load git-commit (auto)
 (unless (package-installed-p 'git-commit-mode)
   (package-refresh-contents) (package-install 'git-commit-mode))
-(require 'git-commit) 
+(require 'git-commit-mode) 
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 
 ;;org mode (auto)
