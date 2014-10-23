@@ -16,6 +16,10 @@
 (require 'org)
 ;start git rebase in org-mode
 (setq auto-mode-alist (cons '("git-rebase-todo" . org-mode) auto-mode-alist))
+;activate graphiz in org-mode
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((dot . t))) ; this line activates dot
 
 ;; scala-mode2 (auto)
 (unless (package-installed-p 'scala-mode2)
