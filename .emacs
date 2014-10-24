@@ -20,6 +20,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((dot . t))) ; this line activates dot
+(setq org-confirm-babel-evaluate nil) ;turn off code execution confirmation
 
 ;; scala-mode2 (auto)
 (unless (package-installed-p 'scala-mode2)
