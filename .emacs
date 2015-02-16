@@ -28,8 +28,14 @@
 (require 'scala-mode2)
 
 ;; color-theme-solarized (auto)
-(unless (package-installed-p 'color-theme-solarized)
-  (package-refresh-contents) (package-install 'color-theme-solarized))
+;(unless (package-installed-p 'color-theme-solarized)
+  ;(package-refresh-contents) (package-install 'color-theme-solarized))
+;(load-theme 'solarized t)
+;(set-frame-parameter nil 'background-mode 'dark)
+
+;; solarized-theme (auto)
+(unless (package-installed-p 'solarized-theme)
+  (package-refresh-contents) (package-install 'solarized-theme))
 (load-theme 'solarized-dark t)
 
 ;;ensime (auto)
