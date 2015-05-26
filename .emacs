@@ -34,9 +34,14 @@
 ;(set-frame-parameter nil 'background-mode 'dark)
 
 ;; solarized-theme (auto)
-(unless (package-installed-p 'solarized-theme)
-  (package-refresh-contents) (package-install 'solarized-theme))
-(load-theme 'solarized-dark t)
+;(unless (package-installed-p 'solarized-theme)
+;  (package-refresh-contents) (package-install 'solarized-theme))
+;(load-theme 'solarized-dark t)
+
+;; zenburn-theme (auto)
+(unless (package-installed-p 'zenburn-theme)
+  (package-refresh-contents) (package-install 'zenburn-theme))
+(load-theme 'zenburn t)
 
 ;;ensime (auto)
 (unless (package-installed-p 'ensime)
