@@ -62,6 +62,21 @@
 (global-set-key (kbd "C-x C-l") 'helm-locate)
 (helm-mode 1)
 
+;; graphviz-dot-mode (auto)
+(unless (package-installed-p 'graphviz-dot-mode)
+  (package-refresh-contents) (package-install 'graphviz-dot-mode))
+(require 'graphviz-dot-mode)
+
+;; markdown-mode (auto)
+(unless (package-installed-p 'markdown-mode)
+  (package-refresh-contents) (package-install 'markdown-mode))
+(require 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
 ;;Java Development
 (semantic-mode 1)
 
