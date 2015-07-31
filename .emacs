@@ -4,12 +4,6 @@
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-;; load git-commit (auto)
-(unless (package-installed-p 'git-commit-mode)
-  (package-refresh-contents) (package-install 'git-commit-mode))
-(require 'git-commit-mode) 
-(add-hook 'git-commit-mode-hook 'turn-on-flyspell)
-
 ;;org mode (auto)
 (unless (package-installed-p 'org)
   (package-refresh-contents) (package-install 'org))
