@@ -2,7 +2,9 @@
 
 emacsVersion=emacs-24.5
 
-sudo apt-get install -y make libjpeg-dev libpng-dev libgif-dev libtiff-dev libncurses-dev
+sudo apt-get install build-essential
+sudo apt-get build-dep -y emacs24
+sudo apt-get install -y checkinstall
 wget -c http://ftp.gnu.org/gnu/emacs/$emacsVersion.tar.gz
 tar xfz $emacsVersion.tar.gz
 mv $emacsVersion.tar.gz $emacsVersion/.
