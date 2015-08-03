@@ -103,7 +103,7 @@ by using nxml's indentation rules."
 (setq frame-title-format "%b - emacs")
 
 ;setting slightly small text size
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
 
 ;disable backup
 (setq backup-inhibited t)
